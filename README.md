@@ -15,6 +15,7 @@ A curated collection of SKILL.md files for AI agents working on robotics softwar
 | **[docker-ros2-development/](skills/docker-ros2-development/SKILL.md)** | Docker + ROS2 | Multi-stage Dockerfiles, docker-compose, DDS across containers, GPU passthrough, devcontainers |
 | **[ros2-web-integration/](skills/ros2-web-integration/SKILL.md)** | Web Integration | rosbridge, FastAPI/Flask bridges, WebSocket streaming, REST APIs, MJPEG/WebRTC, security |
 | **[robot-bringup/](skills/robot-bringup/SKILL.md)** | System Bringup | systemd services, launch composition, udev rules, watchdogs, log rotation, graceful shutdown |
+| **[robotics-security/](skills/robotics-security/SKILL.md)** | Security & Hardening | SROS2, DDS encryption, network segmentation, secrets management, e-stop isolation, secure boot |
 
 ## How Agents Use These Skills
 
@@ -50,6 +51,7 @@ def load_skill(task_description: str) -> str:
         'docker': 'skills/docker-ros2-development/SKILL.md',
         'web': 'skills/ros2-web-integration/SKILL.md',
         'bringup': 'skills/robot-bringup/SKILL.md',
+        'security': 'skills/robotics-security/SKILL.md',
     }
     # Match task to skill and inject into context
     for key, path in skills.items():
@@ -110,6 +112,7 @@ Robot System Architecture
 ├── Containerization ───── docker-ros2-development/ (Dockerfiles, compose, DDS, GPU)
 ├── Web Interfaces ─────── ros2-web-integration/ (REST, WebSocket, streaming, dashboards)
 ├── System Bringup ─────── robot-bringup/ (systemd, udev, watchdogs, boot sequence)
+├── Security ──────────── robotics-security/ (SROS2, hardening, e-stop isolation)
 └── Deployment ─────────── ros2/ (production checklist, CI/CD)
 ```
 
